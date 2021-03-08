@@ -27,6 +27,8 @@ GEM
     activejob (5.2.4.5)
       activesupport (= 5.2.4.5)
       globalid (>= 0.3.6)
+    activejob-locking (0.6.2)
+      activejob
     activemodel (5.2.4.5)
       activesupport (= 5.2.4.5)
     activerecord (5.2.4.5)
@@ -190,6 +192,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activejob-locking
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)
