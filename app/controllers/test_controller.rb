@@ -1,9 +1,10 @@
 class TestController < ApplicationController
   def index
-    DeleteJob.perform_later("node1")
-    CreateJob.perform_later("node1")
-    DeleteJob.perform_later("node2")
-    CreateJob.perform_later("node2")
+
+	(1..9).each do |i|
+	  DeleteJob.perform_later("node#{i}")
+	  CreateJob.set(wait: 2.seconds).perform_later("node#{i}")
+	end
     render plain: "OK"
   end
 end
